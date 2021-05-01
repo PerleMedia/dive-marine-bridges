@@ -24,7 +24,7 @@
             </div>
         </section>
 
-        <section v-for="area in areas" v-bind:id="area.id">
+        <section v-for="area in areas" v-bind:id="area.id" class="bridge-group">
             <h2>{{ area.name }}</h2>
             <iframe class="map-overview" v-bind:src="area.map" width="640" height="300"></iframe>
             <article v-for="(bridge, index) in area.bridges" v-bind:id="bridge.id">
@@ -35,15 +35,67 @@
                     <a v-if="bridge.image3" v-bind:href="bridge.image3" target="_blank"><img v-bind:src="bridge.image3"/></a>
                 </div>
                 <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide</p>
-                <map></map>
-                <p><strong>Parking: </strong>{{ bridge.parking }}</p>
-                <a href="#">Get Directions to Parking Spot</a>
-                <p><strong>Entry: </strong>{{ bridge.entry }}</p>
-                <p><strong>Station: </strong>{{ bridge.station }}</p>
-                <p><strong>Tidal: </strong>{{ bridge.tidal }}</p>
-                <p><strong>Gear: </strong>{{ bridge.gear }}</p>
-                <p><strong>Bridge width: </strong>{{ bridge.width }}</p>
-                <p><strong>Bridge length: </strong>{{ bridge.length }}</p>
+                <table id="bridge-details">
+                    <tr>
+                        <td>
+                            <strong>Parking: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.parking }}<br>
+                            <a href="#">Get Directions to Parking Spot</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Entry: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.entry }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Station: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.station }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Tidal: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.tidal }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Gear: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.gear }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Width: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.width }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Length: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.length }}
+                        </td>
+                    </tr>
+
+                </table>
+    
             </article>
         </section>  
     </div>
