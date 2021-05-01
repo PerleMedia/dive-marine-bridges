@@ -15,6 +15,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   font-family: 'Montserrat';
+  font-weight: 700;
 }
 
 #map-legend h4 {
@@ -175,7 +176,7 @@ section.bridge-group article .button-container a {
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: .1em;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
 }
 
