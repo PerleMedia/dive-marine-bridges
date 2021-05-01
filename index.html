@@ -18,7 +18,7 @@
     <iframe class="map-overview" src="https://www.google.com/maps/d/u/1/embed?mid=1COM-iGVLk1htZOk1gl0FKtLmax4neUBh&z=12" width="640" height="400"></iframe>
     
     
-    <div id="app">
+    <div id="app" v-cloak>
         <section id="map-legend">
             <div v-for="area in areas"> 
                 <a v-bind:href="'#' + area.id"><h4>{{ area.name }}</h4></a>
@@ -40,8 +40,8 @@
                 </div>
                 <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide</p>
                 <div class="button-container">
-                    <a href="#">View on Map</a>
-                    <a href="#">Where to Park</a>
+                    <a v-bind:href="bridge.bridgeMap" target="_blank">View on Map</a>
+                    <a v-bind:href="bridge.parkingMap" target="_blank">Where to Park</a>
                 </div>
                 <table id="bridge-details">
                     <tr>
@@ -105,7 +105,16 @@
                 </table>
     
             </article>
-        </section>  
+        </section> 
+        <transition name="fade">
+            <div id="page-top" @click="toTop">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                   stroke="#333"
+                   stroke-width="1" stroke-linecap="square" stroke-linejoin="arcs">
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </div>
+          </transition>
     </div>
 </body>
 </html>

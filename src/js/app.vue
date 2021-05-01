@@ -7,8 +7,8 @@ let app = new Vue({
                     id: 'john-mccormack',
                     name: 'John McCormack',
                     number: '3024',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3599873,-6.2396968',
+                    bridgeMap:'https://goo.gl/maps/fF8SnSG34Rj39WjX6',
                     time:'10 minutes before low',
                     tidal: 'Yes',
                     station:'In riverbed, 1 move required',
@@ -25,8 +25,8 @@ let app = new Vue({
                     id: 'footbridge-east-wall',
                     name: 'Footbridge at East Wall Road',
                     number: '5108',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3599873,-6.2396968',
+                    bridgeMap:'https://goo.gl/maps/KiEXcbGMLPmYRbQi7',
                     time:'14 minutes after low',
                     tidal: 'Yes',
                     station:'In riverbed, possibly no moves required',
@@ -43,8 +43,8 @@ let app = new Vue({
                     id: 'annesley',
                     name: 'Annesley',
                     number: '3162',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3599873,-6.2396968',
+                    bridgeMap:'https://goo.gl/maps/YdDnQ24NSLQfHRC57',
                     time:'47 minutes after low',
                     tidal: 'Yes',
                     station:'In riverbed, 1 move required',
@@ -61,8 +61,8 @@ let app = new Vue({
                     id: 'luke-kelly',
                     name: 'Luke Kelly',
                     number: '3019',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3599873,-6.2396968',
+                    bridgeMap:'https://goo.gl/maps/f4XdBjYpqwYNWwE27',
                     time:'1 hour, 9 minutes after low',
                     tidal: 'Yes',
                     station:'In riverbed, 1 or 2 moves required',
@@ -81,8 +81,8 @@ let app = new Vue({
                     id: 'grattan',
                     name: 'Capel Street Grattan',
                     number: '5056',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3447796,-6.2698659',
+                    bridgeMap:'https://goo.gl/maps/bZWYwAwU87MtkkXN9',
                     time:'1 hour, 29 minutes after low',
                     tidal: 'Yes',
                     station:'Top of walls/boardwalk, minimum 1 move required',
@@ -99,8 +99,8 @@ let app = new Vue({
                     id: 'james-joyce',
                     name: 'James Joyce',
                     number: '6091',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3478808,-6.2915583',
+                    bridgeMap:'https://goo.gl/maps/unWrZ9xJKkFk6Nkm7',
                     time:'1 hour, 51 minutes after low',
                     tidal: 'Yes',
                     station:'Top of walls, minimum 1 move required',
@@ -117,8 +117,8 @@ let app = new Vue({
                     id: 'rory-omore',
                     name: 'Rory O\'More',
                     number: '5060',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3478808,-6.2915583',
+                    bridgeMap:'https://goo.gl/maps/kBaocZtFBjNRG9kWA',
                     time:'2 hours after low',
                     tidal: 'Yes',
                     station:'Top of walls, minimum 1 move required',
@@ -135,8 +135,8 @@ let app = new Vue({
                     id: 'frank-sherwin',
                     name: 'Frank Sherwin',
                     number: '5005',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3478808,-6.2915583',
+                    bridgeMap:'https://goo.gl/maps/5dhz7coAJLfzL7kx9',
                     time:'2 hours, 13 minutes after low',
                     tidal: 'Yes',
                     station:'Top of next bridge upstream, 1 move required',
@@ -155,8 +155,8 @@ let app = new Vue({
                     id: 'emmet',
                     name: 'Emmet Bridge',
                     number: '5071',
-                    parkingMap:'',
-                    bridgeMap:'',
+                    parkingMap:'https://www.google.com/maps/dir//53.3298436,-6.2750318',
+                    bridgeMap:'https://goo.gl/maps/AKHrJvvnaiTuVTQL6',
                     time:'',
                     tidal: 'No',
                     station:'On banks, 2 moves required',
@@ -192,5 +192,25 @@ let app = new Vue({
             ]}
         ]
 
-    }
+    },
+    
+      mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+      },
+      methods: {
+        handleScroll: function () {
+          if (this.scTimer) return;
+          this.scTimer = setTimeout(() => {
+            this.scY = window.scrollY;
+            clearTimeout(this.scTimer);
+            this.scTimer = 0;
+          }, 100);
+        },
+        toTop: function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        },
+      },
 });
