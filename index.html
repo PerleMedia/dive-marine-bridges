@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./dist/css/styles.min.css">
     <link rel="stylesheet" href="./dist/css/media.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600&family=Montserrat:wght@200&display=swap" rel="stylesheet">   
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
@@ -39,6 +39,10 @@
                     <a v-if="bridge.image3" v-bind:href="bridge.image3" target="_blank"><img v-bind:src="bridge.image3"/></a>
                 </div>
                 <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide</p>
+                <div class="button-container">
+                    <a href="#">View on Map</a>
+                    <a href="#">Where to Park</a>
+                </div>
                 <table id="bridge-details">
                     <tr>
                         <td>
@@ -46,7 +50,7 @@
                         </td>
                         <td>
                             {{ bridge.parking }}<br>
-                            <a href="#">Get Directions to Parking Spot</a>
+                            
                         </td>
                     </tr>
                     <tr>

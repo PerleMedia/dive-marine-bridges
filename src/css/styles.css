@@ -14,6 +14,7 @@
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-family: 'Montserrat';
 }
 
 #map-legend h4 {
@@ -27,7 +28,6 @@
 }
 
 #map-legend div a {
-  text-decoration: none;
   color: black;
 }
 
@@ -96,7 +96,6 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
-  
       -ms-flex-align: start;
           align-items: flex-start;
   -webkit-box-pack: center;
@@ -135,6 +134,10 @@ section.bridge-group article h3, section.bridge-group article p {
   font-size: 15px;
 }
 
+section.bridge-group article p {
+  font-family: 'Montserrat';
+}
+
 section.bridge-group article span {
   width: 20px;
   height: 20px;
@@ -147,6 +150,33 @@ section.bridge-group article span {
   font-family: 'Antonio';
   display: inline-block;
   margin-right: 10px;
+}
+
+section.bridge-group article .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+
+section.bridge-group article .button-container a {
+  background-color: #333;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  color: white;
+  font-family: montserrat;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 section.bridge-group:nth-child(2) {
@@ -183,6 +213,7 @@ section.bridge-group:nth-child(5) article h3 span {
 
 #bridge-details {
   width: 100%;
+  font-family: 'Montserrat';
 }
 
 #bridge-details td {

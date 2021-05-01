@@ -23,6 +23,7 @@
 #map-legend{
     @include flexRules();
     flex-wrap:wrap;
+    font-family:'Montserrat';
     h4{
         font-family: 'Antonio';
         font-size: 24px;}
@@ -30,7 +31,6 @@
         padding:20px;
         width:100%;
         a{
-            text-decoration:none;
             color:black;
         }
         ol {
@@ -97,10 +97,30 @@ section.bridge-group{
             text-transform:uppercase;
             font-size:15px;
         }
+        p{
+            font-family:'Montserrat';
+        }
         span{
             @include coloredNumber();
             display: inline-block;
             margin-right: 10px;
+        }
+        .button-container{
+            @include flexRules();
+            margin-bottom:10px;
+            a{
+                background-color: #333;
+                padding: 10px 15px;
+                margin: 10px;
+                border-radius: 5px;
+                color: white;
+                font-family: montserrat;
+                font-weight: 100;
+                text-transform: uppercase;
+                letter-spacing: .1em;
+                font-size: 14px;
+                text-decoration: none;
+            }
         }
     }
     &:nth-child(2){
@@ -147,6 +167,7 @@ section.bridge-group{
 
 #bridge-details{
     width:100%;
+    font-family:'Montserrat';
     td{
         padding:10px 5px;
         &:nth-child(1){
