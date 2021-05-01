@@ -16,6 +16,11 @@
       flex-wrap: wrap;
 }
 
+#map-legend h4 {
+  font-family: 'Antonio';
+  font-size: 24px;
+}
+
 #map-legend div {
   padding: 20px;
   width: 100%;
@@ -44,9 +49,10 @@
   text-align: center;
   border-radius: 100%;
   border: 1px solid white;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   color: white;
+  font-family: 'Antonio';
   content: counter(list);
   margin-right: 5px;
   position: absolute;
@@ -90,6 +96,7 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
+  
       -ms-flex-align: start;
           align-items: flex-start;
   -webkit-box-pack: center;
@@ -99,7 +106,7 @@
 
 .gallery a {
   width: 30%;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .gallery a img {
@@ -107,12 +114,25 @@
   height: auto;
 }
 
+section.bridge-group {
+  padding: 20px 10px;
+}
+
 section.bridge-group h2 {
+  font-family: 'Antonio';
   text-align: center;
+  font-size: 40px;
+}
+
+section.bridge-group article {
+  padding: 20px 0;
 }
 
 section.bridge-group article h3, section.bridge-group article p {
   text-align: center;
+  font-family: 'Antonio';
+  text-transform: uppercase;
+  font-size: 15px;
 }
 
 section.bridge-group article span {
@@ -121,9 +141,10 @@ section.bridge-group article span {
   text-align: center;
   border-radius: 100%;
   border: 1px solid white;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   color: white;
+  font-family: 'Antonio';
   display: inline-block;
   margin-right: 10px;
 }
@@ -165,14 +186,45 @@ section.bridge-group:nth-child(5) article h3 span {
 }
 
 #bridge-details td {
-  padding: 8px 2px;
+  padding: 10px 5px;
+}
+
+#bridge-details td:nth-child(1) {
+  width: 18%;
+  font-family: 'Antonio';
 }
 
 #bridge-details tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-#bridge-details td:nth-child(1) {
-  width: 20%;
+@media screen and (min-width: 768px) {
+  #map-legend {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  #map-legend div {
+    width: 25%;
+  }
+  #bridge-details {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #bridge-details td:nth-child(1) {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section.bridge-group article h3 {
+    font-size: 24px;
+  }
+  section.bridge-group article h3 span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    top: -3px;
+    position: relative;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

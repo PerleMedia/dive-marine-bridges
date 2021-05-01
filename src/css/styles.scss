@@ -10,9 +10,10 @@
     text-align: center;
     border-radius: 100%;
     border: 1px solid white;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     color: white;
+    font-family:'Antonio';
 }
 
 .map-overview{
@@ -22,6 +23,9 @@
 #map-legend{
     @include flexRules();
     flex-wrap:wrap;
+    h4{
+        font-family: 'Antonio';
+        font-size: 24px;}
     div{
         padding:20px;
         width:100%;
@@ -36,34 +40,34 @@
             counter-increment: list;
             position: relative;
             padding: 5px 0;
-            line-height: 22px;}
-        li:before {
+            line-height: 22px;
+            &:before {
             @include coloredNumber();
             content: counter(list);
             margin-right: 5px;
             position: absolute;
-            right: 100%;
-            }
-    }
-    div:nth-child(1){
-        background-color:#3689d250;
-        li:before {
-            background-color:#3689d2;}
-    }
-    div:nth-child(2){
-        background-color:#7cb34250;
-        li:before {
-            background-color:#7cb342;}
-    }
-    div:nth-child(3){
-        background-color:#f3a83a50;
-        li:before {
-            background-color:#f3a83a;}
-    }
-    div:nth-child(4){
-        background-color:#9e3eb050;
-        li:before {
-            background-color:#9e3eb0;}
+            right: 100%;}
+        }
+        &:nth-child(1){
+            background-color:#3689d250;
+            li:before {
+                background-color:#3689d2;}
+        }
+        &:nth-child(2){
+            background-color:#7cb34250;
+            li:before {
+                background-color:#7cb342;}
+        }
+        &:nth-child(3){
+            background-color:#f3a83a50;
+            li:before {
+                background-color:#f3a83a;}
+        }
+        &:nth-child(4){
+            background-color:#9e3eb050;
+            li:before {
+                background-color:#9e3eb0;}
+        }
     }
 }
 
@@ -71,7 +75,7 @@
     @include flexRules();
     a {
         width:30%;
-        margin:0 10px;
+        margin:0 5px;
         img{
             width:100%;
             height:auto;
@@ -79,12 +83,19 @@
 }
 
 section.bridge-group{
+    padding:20px 10px;
     h2{
+        font-family:'Antonio';
         text-align: center;
+        font-size:40px;
     }
     article{
+        padding:20px 0;
         h3, p {
             text-align:center;
+            font-family:'Antonio';
+            text-transform:uppercase;
+            font-size:15px;
         }
         span{
             @include coloredNumber();
@@ -92,66 +103,87 @@ section.bridge-group{
             margin-right: 10px;
         }
     }
+    &:nth-child(2){
+        background-color:#3689d220;
+        article{
+            h3 span{
+                background-color:#3689d2;
+            }
+        }
 
-}
-section.bridge-group:nth-child(2){
-    background-color:#3689d220;
-    h2{
     }
-    article{
-        h3 span{
-            background-color:#3689d2;
+    &:nth-child(3){
+        background-color:#7cb34220;
+        article{
+            h3 span{
+                background-color:#7cb342;
+            }
         }
     }
-
-}
-section.bridge-group:nth-child(3){
-    background-color:#7cb34220;
-    h2{
-    }
-    article{
-        h3 span{
-            background-color:#7cb342;
+    &:nth-child(4){
+        background-color:#f3a83a20;
+        h2{
         }
-    }
-
-}
-section.bridge-group:nth-child(4){
-    background-color:#f3a83a20;
-    h2{
-    }
-    article{
-        h3 span{
-            background-color:#f3a83a;
+        article{
+            h3 span{
+                background-color:#f3a83a;
+            }
         }
-    }
 
-}
-section.bridge-group:nth-child(5){
-    background-color:#9e3eb020;
-    h2{
     }
-    article{
-        h3 span{
-            background-color:#9e3eb0;
+    &:nth-child(5){
+        background-color:#9e3eb020;
+        h2{
         }
-    }
+        article{
+            h3 span{
+                background-color:#9e3eb0;
+            }
+        }
 
+    }
 }
 
 
 #bridge-details{
     width:100%;
     td{
-        padding:8px 2px;}
+        padding:10px 5px;
+        &:nth-child(1){
+            width:18%;
+            font-family:'Antonio';}
+        }
     tr:nth-child(odd){
         background-color:rgba(0,0,0,.1);}
-    td:nth-child(1){
-        width:20%;}
+    
 }
 
 
-    
+@media screen and (min-width:768px){
+    #map-legend{
+        flex-wrap:nowrap;
+        div{
+            width:25%;}
+    }
+    #bridge-details{
+        width:80%;
+        margin:0 auto;
+        td:nth-child(1){
+            width:15%;}
+    }
+}
+
+@media screen and (max-width:767px) {
+    section.bridge-group article h3{
+        font-size:24px;
+        span{
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            top: -3px;
+            position: relative;}
+    }
+} 
 
 
 

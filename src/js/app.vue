@@ -76,7 +76,7 @@ let app = new Vue({
                     image3: './dist/img/lk3.jpg'
                 }
             ]},
-            {id:'liffey-inner', name:'Liffey Inner City', map: 'https://www.google.com/maps/d/u/1/embed?mid=15Q1wbF7-z62dXERxaTQTMw7PZRiwhzS3&z=12&ll=53.3459305,-6.3073188', bridges: [
+            {id:'liffey-inner', name:'Liffey Inner City', map: 'https://www.google.com/maps/d/u/1/embed?mid=15Q1wbF7-z62dXERxaTQTMw7PZRiwhzS3&z=12.5&ll=53.3459305,-6.3073188', bridges: [
                 {
                     id: 'grattan',
                     name: 'Capel Street Grattan',
@@ -170,7 +170,7 @@ let app = new Vue({
                     image3: './dist/img/em3.jpg'
                 }
             ]},
-            {id:'north-city', name:'North Dublin', map: 'https://www.google.com/maps/d/u/1/embed?mid=1HFfsjHbKwWtqcf-zUBWvX2w4Pmwiyyy1&z=14&ll=53.374498796510686,-6.29373751767579', bridges: [
+            {id:'north-city', name:'North Dublin', map: 'https://www.google.com/maps/d/u/1/embed?mid=1HFfsjHbKwWtqcf-zUBWvX2w4Pmwiyyy1&z=12&ll=53.374498796510686,-6.29373751767579', bridges: [
                 {
                     id: 'grattan',
                     name: 'Capel Street Grattan',
