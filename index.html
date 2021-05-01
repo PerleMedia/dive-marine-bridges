@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Dive & Marine | Bridges in Dublin
+    </title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="./dist/js/app.min.vue" defer></script>
+    <link rel="stylesheet" href="./dist/css/styles.min.css">
+
+</head>
+<body>
+    <iframe class="map-overview" src="https://www.google.com/maps/d/u/1/embed?mid=1COM-iGVLk1htZOk1gl0FKtLmax4neUBh" width="640" height="480"></iframe>
+    
+    
+    <div id="app">
+        <section id="map-legend">
+            <div v-for="area in areas"> 
+                <a v-bind:href="'#' + area.id"><h4>{{ area.name }}</h4></a>
+                <ol>
+                    <li v-for="bridge in area.bridges"><a v-bind:href="'#' + bridge.id">{{ bridge.name }}</a></li>
+                </ol>
+            </div>
+        </section>
+
+        <section v-for="area in areas" v-bind:id="area.id">
+            <h2>{{ area.name }}</h2>
+            <iframe class="map-overview" v-bind:src="area.map" width="640" height="300"></iframe>
+            <article v-for="(bridge, index) in area.bridges" v-bind:id="bridge.id">
+                <h3><span>{{ index + 1 }}</span>{{ bridge.name }}  - {{ bridge.number }}</h3>
+                <div class="gallery">
+                    <a v-bind:href="bridge.image1" target="_blank"><img v-bind:src="bridge.image1"/></a>
+                    <a v-bind:href="bridge.image2" target="_blank"><img v-bind:src="bridge.image2"/></a>
+                    <a v-if="bridge.image3" v-bind:href="bridge.image3" target="_blank"><img v-bind:src="bridge.image3"/></a>
+                </div>
+                <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide</p>
+                <map></map>
+                <p><strong>Parking: </strong>{{ bridge.parking }}</p>
+                <a href="#">Get Directions to Parking Spot</a>
+                <p><strong>Entry: </strong>{{ bridge.entry }}</p>
+                <p><strong>Station: </strong>{{ bridge.station }}</p>
+                <p><strong>Tidal: </strong>{{ bridge.tidal }}</p>
+                <p><strong>Gear: </strong>{{ bridge.gear }}</p>
+                <p><strong>Bridge width: </strong>{{ bridge.width }}</p>
+                <p><strong>Bridge length: </strong>{{ bridge.length }}</p>
+            </article>
+        </section>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.map-overview {
+  width: 100%;
+}
+
+#map-legend div:nth-child(1) {
+  background-color: #3689d270;
+}
+
+#map-legend div:nth-child(2) {
+  background-color: #7cb34270;
+}
+
+#map-legend div:nth-child(3) {
+  background-color: #f3a83a70;
+}
+
+#map-legend div:nth-child(4) {
+  background-color: #9e3eb070;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gallery a {
+  width: 30%;
+  margin: 0 10px;
+}
+
+.gallery a img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  #map-legend {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #map-legend div {
+    width: 25%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

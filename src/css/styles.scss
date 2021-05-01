@@ -1,0 +1,44 @@
+@mixin flexRules{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+.map-overview{
+    width:100%;
+}
+
+#map-legend{
+    div:nth-child(1){
+        background-color:#3689d270;
+    }
+    div:nth-child(2){
+        background-color:#7cb34270;
+    }
+    div:nth-child(3){
+        background-color:#f3a83a70;
+    }
+    div:nth-child(4){
+        background-color:#9e3eb070;
+    }
+}
+
+.gallery {
+    @include flexRules();
+    a {
+        width:30%;
+        margin:0 10px;
+        img{
+            width:100%;
+            height:auto;
+        }}
+}
+
+@media (min-width:768px){
+    #map-legend{
+        @include flexRules();
+        div{
+            width:25%;
+        }
+    }
+}
