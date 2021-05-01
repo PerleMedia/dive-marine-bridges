@@ -125,6 +125,7 @@ section.bridge-group article span {
   line-height: 20px;
   color: white;
   display: inline-block;
+  margin-right: 10px;
 }
 
 section.bridge-group:nth-child(2) {
@@ -175,7 +176,7 @@ section.bridge-group:nth-child(5) article h3 span {
   width: 20%;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   #map-legend {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -189,6 +190,19 @@ section.bridge-group:nth-child(5) article h3 span {
   }
   #bridge-details td:nth-child(1) {
     width: 15%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  section.bridge-group article h3 {
+    font-size: 14px;
+  }
+  section.bridge-group article span {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    top: -8px;
+    position: relative;
   }
 }
 /*# sourceMappingURL=styles.css.map */
