@@ -38,7 +38,8 @@
                     <a v-bind:href="bridge.image2" target="_blank"><img v-bind:src="bridge.image2"/></a>
                     <a v-if="bridge.image3" v-bind:href="bridge.image3" target="_blank"><img v-bind:src="bridge.image3"/></a>
                 </div>
-                <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide</p>
+                <p v-if="bridge.time">Pictures taken {{ bridge.time }} tide<br></p>
+                <p>Click image to enlarge</p>
                 <div class="button-container">
                     <a v-bind:href="bridge.bridgeMap" target="_blank">View on Map</a>
                     <a v-bind:href="bridge.parkingMap" target="_blank">Where to Park</a>

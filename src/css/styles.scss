@@ -131,6 +131,14 @@ section.bridge-group{
                 text-decoration: none;
             }
         }
+        &::before{
+            content: "";
+            width: 40%;
+            height: 1px;
+            position: absolute;
+            left: 30%;
+            border-bottom: 1px dotted #333;
+        }
     }
     &:nth-child(2){
         background-color:#3689d220;
