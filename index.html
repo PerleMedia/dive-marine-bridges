@@ -29,7 +29,7 @@
         </section>
 
         <section v-for="area in areas" v-bind:id="area.id" class="bridge-group">
-            <h2>{{ area.name }}</h2>
+            <h2><span>{{ area.name }}</span></h2>
             <iframe class="map-overview" v-bind:src="area.map" width="640" height="300"></iframe>
             <article v-for="(bridge, index) in area.bridges" v-bind:id="bridge.id">
                 <h3><span>{{ index + 1 }}</span>{{ bridge.name }}  - {{ bridge.number }}</h3>
@@ -102,6 +102,15 @@
                             {{ bridge.length }}
                         </td>
                     </tr>
+                    <tr v-if="bridge.notes">
+                        <td>
+                            <strong>Notes: </strong>
+                        </td>
+                        <td>
+                            {{ bridge.notes }}
+                        </td>
+                    </tr>
+                    
 
                 </table>
     
